@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Philosophy - Wisdom SRS</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': {
+                            50: '#f6f7f5',
+                            100: '#e3e7e0',
+                            200: '#c7d0c1',
+                            300: '#a3b49a',
+                            400: '#7a8471',
+                            500: '#5d6b54',
+                            600: '#4a5543',
+                            700: '#3d4637',
+                            800: '#333a2f',
+                            900: '#2b3128',
+                        },
+                        'terracotta': {
+                            50: '#faf8f5',
+                            100: '#f2ede4',
+                            200: '#e4d8c4',
+                            300: '#d1bd9b',
+                            400: '#b8956a',
+                            500: '#a67c4a',
+                            600: '#8a6540',
+                            700: '#715337',
+                            800: '#5d4430',
+                            900: '#4e3a2a',
+                        },
+                        'ivory': '#f8f6f0',
+                        'charcoal': '#2c2c2c',
+                    },
+                    fontFamily: {
+                        'serif': ['Crimson Text', 'serif'],
+                        'sans': ['Source Sans Pro', 'sans-serif'],
+                        'accent': ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <style>
+        body {
+            background-color: #f8f6f0;
+            background-image: url('resources/parchment-texture.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #7a8471;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .philosophy-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .philosophy-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .category-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .category-tab.active {
+            background: linear-gradient(135deg, #7a8471 0%, #b8956a 100%);
+            color: white;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .add-to-deck-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-deck-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .add-to-deck-btn.added {
+            background-color: #10b981;
+            color: white;
+        }
+        
+        .search-highlight {
+            background-color: #fef3c7;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="font-sans text-charcoal">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-sm border-b border-sage-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-sage-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">W</span>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-xl font-semibold text-charcoal">Wisdom</h1>
+                        <p class="text-sm text-gray-600">Ancient Philosophy SRS</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Review</a>
+                    <a href="explore.html" class="nav-link active text-sage-700 font-medium">Explore</a>
+                    <a href="progress.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Progress</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-sage-50 to-terracotta-50 py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl font-bold text-charcoal mb-4">
+                Explore Ancient Wisdom
+            </h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+                Discover profound insights from the greatest minds in human history. 
+                Add meaningful quotes to your personal learning deck.
+            </p>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="max-w-6xl mx-auto px-6 py-8">
+        <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6 mb-8">
+            <!-- Search Bar -->
+            <div class="mb-6">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Search quotes, philosophers, or concepts..."
+                        class="w-full px-4 py-3 pl-12 bg-white rounded-lg border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent"
+                    >
+                    <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button class="category-tab active px-6 py-2 rounded-lg font-medium" data-category="all">
+                    All Traditions
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="greek">
+                    Greek Philosophy
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="roman">
+                    Roman Stoicism
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="eastern">
+                    Eastern Wisdom
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="modern">
+                    Modern Insights
+                </button>
+            </div>
+            
+            <!-- Results Info -->
+            <div class="text-sm text-gray-600">
+                <span id="results-count">Loading...</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Cards Grid -->
+    <main class="max-w-6xl mx-auto px-6 pb-12">
+        <div id="philosophy-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+        
+        <!-- Loading State -->
+        <div id="loading-state" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-sage-600"></div>
+            <p class="mt-4 text-gray-600">Loading wisdom...</p>
+        </div>
+        
+        <!-- No Results State -->
+        <div id="no-results" class="text-center py-12 hidden">
+            <div class="text-6xl mb-4">🔍</div>
+            <h3 class="text-xl font-serif text-gray-700 mb-2">No quotes found</h3>
+            <p class="text-gray-600">Try adjusting your search or browse by category</p>
+        </div>
+    </main>
+
+    <!-- Success Toast -->
+    <div id="toast" class="fixed top-20 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Added to your learning deck!</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-4">
+                <div class="font-serif text-xl mb-2">Wisdom</div>
+                <p class="text-gray-400 text-sm">
+                    Master ancient philosophy through spaced repetition
+                </p>
+            </div>
+            <div class="text-xs text-gray-500">
+                © 2024 Wisdom SRS. Designed for contemplative learning.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Data and Main App -->
+    <script src="data.js"></script>
+    <script>
+        class PhilosophyExplorer {
+            constructor() {
+                this.currentCategory = 'all';
+                this.searchTerm = '';
+                this.allQuotes = [];
+                this.init();
+            }
+
+            init() {
+                this.loadAllQuotes();
+                this.setupEventListeners();
+                this.renderQuotes();
+                this.hideLoading();
+            }
+
+            loadAllQuotes() {
+                // Combine all quotes from different categories
+                Object.keys(philosophicalSayings).forEach(category => {
+                    philosophicalSayings[category].forEach(quote => {
+                        this.allQuotes.push({
+                            ...quote,
+                            category: category
+                        });
+                    });
+                });
+            }
+
+            setupEventListeners() {
+                // Category tabs
+                document.querySelectorAll('.category-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        this.switchCategory(e.target.dataset.category);
+                    });
+                });
+
+                // Search input
+                const searchInput = document.getElementById('search-input');
+                searchInput.addEventListener('input', (e) => {
+                    this.searchTerm = e.target.value.toLowerCase();
+                    this.renderQuotes();
+                });
+            }
+
+            switchCategory(category) {
+                this.currentCategory = category;
+                
+                // Update tab styles
+                document.querySelectorAll('.category-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                    tab.classList.add('bg-white', 'hover:bg-sage-100');
+                });
+                
+                const activeTab = document.querySelector(`[data-category="${category}"]`);
+                activeTab.classList.add('active');
+                activeTab.classList.remove('bg-white', 'hover:bg-sage-100');
+                
+                this.renderQuotes();
+            }
+
+            filterQuotes() {
+                return this.allQuotes.filter(quote => {
+                    // Category filter
+                    const categoryMatch = this.currentCategory === 'all' || quote.category === this.currentCategory;
+                    
+                    // Search filter
+                    const searchMatch = this.searchTerm === '' || 
+                        quote.text.toLowerCase().includes(this.searchTerm) ||
+                        quote.philosopher.toLowerCase().includes(this.searchTerm) ||
+                        quote.explanation.toLowerCase().includes(this.searchTerm) ||
+                        quote.category.toLowerCase().includes(this.searchTerm);
+                    
+                    return categoryMatch && searchMatch;
+                });
+            }
+
+            renderQuotes() {
+                const filteredQuotes = this.filterQuotes();
+                const grid = document.getElementById('philosophy-grid');
+                const resultsCount = document.getElementById('results-count');
+                const noResults = document.getElementById('no-results');
+                
+                // Update results count
+                resultsCount.textContent = `${filteredQuotes.length} quote${filteredQuotes.length !== 1 ? 's' : ''} found`;
+                
+                if (filteredQuotes.length === 0) {
+                    grid.innerHTML = '';
+                    noResults.classList.remove('hidden');
+                    return;
+                }
+                
+                noResults.classList.add('hidden');
+                
+                // Render quote cards
+                grid.innerHTML = filteredQuotes.map(quote => this.createQuoteCard(quote)).join('');
+                
+                // Animate cards
+                anime({
+                    targets: '.philosophy-card',
+                    opacity: [0, 1],
+                    translateY: [20, 0],
+                    delay: anime.stagger(100),
+                    duration: 600,
+                    easing: 'easeOutQuad'
+                });
+            }
+
+            createQuoteCard(quote) {
+                const isAdded = userProgress.cards[quote.id] && userProgress.cards[quote.id].repetitions > 0;
+                const highlightedText = this.highlightSearchTerm(quote.text);
+                const highlightedPhilosopher = this.highlightSearchTerm(quote.philosopher);
+                
+                return `
+                    <div class="philosophy-card bg-white/70 rounded-lg p-6 shadow-lg border border-sage-200 opacity-0">
+                        <div class="mb-4">
+                            <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">
+                                ${quote.category} • ${quote.difficulty}
+                            </div>
+                            <blockquote class="font-serif text-lg text-gray-800 mb-3 leading-relaxed">
+                                "${highlightedText}"
+                            </blockquote>
+                            <div class="text-sm text-terracotta-600 font-medium mb-1">
+                                — ${highlightedPhilosopher}
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                ${quote.period}
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                ${quote.explanation}
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                                ${quote.category}
+                            </span>
+                            <button 
+                                class="add-to-deck-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isAdded ? 'added bg-green-500' : 'bg-sage-600 text-white hover:bg-sage-700'}"
+                                data-quote-id="${quote.id}"
+                                ${isAdded ? 'disabled' : ''}
+                            >
+                                ${isAdded ? 'Added ✓' : 'Add to Deck'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            highlightSearchTerm(text) {
+                if (!this.searchTerm) return text;
+                
+                const regex = new RegExp(`(${this.searchTerm})`, 'gi');
+                return text.replace(regex, '<span class="search-highlight">$1</span>');
+            }
+
+            hideLoading() {
+                document.getElementById('loading-state').style.display = 'none';
+            }
+
+            showToast() {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('translate-x-full');
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-x-full');
+                }, 3000);
+            }
+        }
+
+        // Add click handlers for add to deck buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.add-to-deck-btn') && !e.target.disabled) {
+                const quoteId = e.target.dataset.quoteId;
+                
+                // Add to user's learning deck
+                if (!userProgress.cards[quoteId]) {
+                    const [category] = quoteId.split('_');
+                    const categoryKey = category === 'greek' ? 'greek' : 
+                                       category === 'roman' ? 'roman' : 
+                                       category === 'eastern' ? 'eastern' : 'modern';
+                    
+                    userProgress.cards[quoteId] = {
+                        interval: 0,
+                        repetitions: 0,
+                        easeFactor: 2.5,
+                        nextReview: Date.now(),
+                        category: categoryKey,
+                        difficulty: 'beginner'
+                    };
+                    
+                    saveProgress();
+                    
+                    // Update button
+                    e.target.textContent = 'Added ✓';
+                    e.target.classList.add('added', 'bg-green-500');
+                    e.target.disabled = true;
+                    
+                    // Show toast
+                    window.philosophyExplorer.showToast();
+                    
+                    // Animate button
+                    anime({
+                        targets: e.target,
+                        scale: [1, 1.1, 1],
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                }
+            }
+        });
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.philosophyExplorer = new PhilosophyExplorer();
+        });
+    </script>
+</body>
+</html>

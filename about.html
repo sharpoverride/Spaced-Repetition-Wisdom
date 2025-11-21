@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Wisdom SRS</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': {
+                            50: '#f6f7f5',
+                            100: '#e3e7e0',
+                            200: '#c7d0c1',
+                            300: '#a3b49a',
+                            400: '#7a8471',
+                            500: '#5d6b54',
+                            600: '#4a5543',
+                            700: '#3d4637',
+                            800: '#333a2f',
+                            900: '#2b3128',
+                        },
+                        'terracotta': {
+                            50: '#faf8f5',
+                            100: '#f2ede4',
+                            200: '#e4d8c4',
+                            300: '#d1bd9b',
+                            400: '#b8956a',
+                            500: '#a67c4a',
+                            600: '#8a6540',
+                            700: '#715337',
+                            800: '#5d4430',
+                            900: '#4e3a2a',
+                        },
+                        'ivory': '#f8f6f0',
+                        'charcoal': '#2c2c2c',
+                    },
+                    fontFamily: {
+                        'serif': ['Crimson Text', 'serif'],
+                        'sans': ['Source Sans Pro', 'sans-serif'],
+                        'accent': ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <style>
+        body {
+            background-color: #f8f6f0;
+            background-image: url('resources/parchment-texture.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #7a8471;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .expandable-section {
+            transition: all 0.3s ease;
+        }
+        
+        .expandable-section.collapsed .section-content {
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .expandable-section .section-content {
+            max-height: 1000px;
+            transition: max-height 0.3s ease;
+        }
+        
+        .methodology-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .methodology-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .philosophy-timeline {
+            position: relative;
+        }
+        
+        .philosophy-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #7a8471, #b8956a);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #7a8471;
+            border: 3px solid #f8f6f0;
+        }
+    </style>
+</head>
+<body class="font-sans text-charcoal">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-sm border-b border-sage-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-sage-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">W</span>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-xl font-semibold text-charcoal">Wisdom</h1>
+                        <p class="text-sm text-gray-600">Ancient Philosophy SRS</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Review</a>
+                    <a href="explore.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Explore</a>
+                    <a href="progress.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Progress</a>
+                    <a href="about.html" class="nav-link active text-sage-700 font-medium">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-sage-50 to-terracotta-50 py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl font-bold text-charcoal mb-4">
+                About Wisdom SRS
+            </h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+                Discover how spaced repetition and ancient philosophy combine to create 
+                a powerful tool for intellectual and personal growth.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <!-- App Philosophy -->
+        <section class="mb-16 fade-in">
+            <div class="bg-white/60 backdrop-blur-sm rounded-lg p-8 text-center">
+                <div class="text-6xl mb-6">🧠</div>
+                <h3 class="font-serif text-2xl font-semibold mb-6">Our Philosophy</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    True wisdom isn't about memorizing facts—it's about internalizing timeless truths that transform how we see the world and ourselves. Wisdom SRS bridges the gap between ancient philosophical insights and modern cognitive science, creating a learning experience that honors both the depth of philosophical thought and the science of effective learning.
+                </p>
+                <blockquote class="font-serif text-xl text-sage-700 italic">
+                    "The unexamined life is not worth living." — Socrates
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Spaced Repetition Science -->
+        <section class="mb-16">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">The Science of Spaced Repetition</h3>
+            
+            <div class="methodology-card bg-white/60 backdrop-blur-sm rounded-lg p-8 mb-8">
+                <h4 class="font-serif text-xl font-semibold mb-4 text-sage-700">What is Spaced Repetition?</h4>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Spaced repetition is a learning technique that leverages the psychological spacing effect—the phenomenon where we learn more effectively when study sessions are spread out over time. This method is based on the work of German psychologist Hermann Ebbinghaus, who discovered that our memory of information follows a predictable forgetting curve.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    By reviewing information at strategically timed intervals, we can interrupt the forgetting process and strengthen long-term memory retention. Each successful recall strengthens the neural pathways, making the information more durable and accessible over time.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="methodology-card bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl mb-4">📈</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">The Forgetting Curve</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Without review, we forget approximately 50% of new information within an hour, and up to 70% within 24 hours. Spaced repetition interrupts this curve by scheduling reviews just before the point of forgetting.
+                    </p>
+                </div>
+                
+                <div class="methodology-card bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl mb-4">🎯</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Optimal Timing</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Reviews are scheduled at increasing intervals: 1 day, 3 days, 1 week, 2 weeks, 1 month. This pattern maximizes retention while minimizing study time.
+                    </p>
+                </div>
+                
+                <div class="methodology-card bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Active Recall</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Each review requires active effort to retrieve the information, strengthening memory pathways more effectively than passive re-reading.
+                    </p>
+                </div>
+                
+                <div class="methodology-card bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl mb-4">🧠</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Long-term Retention</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        This method can increase retention rates to over 95% for extended periods, making it ideal for building deep, lasting knowledge.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Wisdom SRS Works -->
+        <section class="mb-16">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">How Wisdom SRS Works</h3>
+            
+            <div class="space-y-6">
+                <div class="expandable-section bg-white/60 backdrop-blur-sm rounded-lg">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleSection(this)">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-serif text-xl font-semibold text-sage-700">1. Smart Scheduling Algorithm</h4>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="section-content px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Our algorithm uses a modified SM-2 algorithm that adapts to your individual learning patterns. Each time you review a quote, you rate your difficulty level:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                            <li><strong>Again:</strong> You struggled with this quote - it will reappear soon</li>
+                            <li><strong>Hard:</strong> You found it challenging - review in a few days</li>
+                            <li><strong>Good:</strong> You remembered it well - review in a week</li>
+                            <li><strong>Easy:</strong> You knew it instantly - review in a month</li>
+                        </ul>
+                        <p class="text-gray-700 leading-relaxed mt-4">
+                            The algorithm adjusts the scheduling based on your ratings, optimizing for your personal learning curve and ensuring you see each quote at the perfect moment for maximum retention.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="expandable-section bg-white/60 backdrop-blur-sm rounded-lg collapsed">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleSection(this)">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-serif text-xl font-semibold text-sage-700">2. Curated Philosophical Content</h4>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="section-content px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Every quote in our collection has been carefully selected and contextualized to provide maximum learning value:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                            <li><strong>Historical Context:</strong> Each quote includes the philosopher's period and background</li>
+                            <li><strong>Modern Explanation:</strong> Clear interpretations that connect ancient wisdom to contemporary life</li>
+                            <li><strong>Difficulty Levels:</strong> Quotes are categorized by complexity and philosophical depth</li>
+                            <li><strong>Cross-References:</strong> Related concepts are linked to build comprehensive understanding</li>
+                        </ul>
+                        <p class="text-gray-700 leading-relaxed mt-4">
+                            Our collection spans four major philosophical traditions, offering a balanced perspective on human wisdom across cultures and time periods.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="expandable-section bg-white/60 backdrop-blur-sm rounded-lg collapsed">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleSection(this)">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-serif text-xl font-semibold text-sage-700">3. Progressive Learning Design</h4>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="section-content px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            The app is designed to build understanding progressively, like a good teacher would:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                            <li><strong>Gentle Introduction:</strong> Start with accessible concepts before moving to complex ideas</li>
+                            <li><strong>Spiral Curriculum:</strong> Revisit concepts at deeper levels as your understanding grows</li>
+                            <li><strong>Personal Adaptation:</strong> The system learns your preferences and adjusts content accordingly</li>
+                            <li><strong>Contemplative Pacing:</strong> Designed to encourage reflection rather than rushed memorization</li>
+                        </ul>
+                        <p class="text-gray-700 leading-relaxed mt-4">
+                            This approach ensures that you don't just memorize quotes—you internalize the wisdom they contain, making it a natural part of your thinking and decision-making.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophical Traditions -->
+        <section class="mb-16">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">Philosophical Traditions</h3>
+            
+            <div class="philosophy-timeline">
+                <div class="timeline-item">
+                    <h4 class="font-serif text-lg font-semibold text-sage-700 mb-2">Greek Philosophy (6th-3rd century BCE)</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        The foundation of Western thought, featuring Socrates' method of questioning, Plato's theory of forms, and Aristotle's systematic approach to knowledge. These thinkers established the fundamental questions that philosophy still grapples with today.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="font-serif text-lg font-semibold text-terracotta-700 mb-2">Roman Stoicism (1st-2nd century CE)</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Practical wisdom for daily life, emphasizing virtue, self-control, and acceptance of what we cannot change. Marcus Aurelius, Seneca, and Epictetus offer timeless guidance for resilience and inner peace.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="font-serif text-lg font-semibold text-sage-700 mb-2">Eastern Wisdom (6th-5th century BCE)</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ancient insights from Taoism and Confucianism, emphasizing harmony, balance, and the interconnectedness of all things. Lao Tzu and Confucius provide different but complementary approaches to living wisely.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="font-serif text-lg font-semibold text-terracotta-700 mb-2">Modern Philosophy (17th-20th century)</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Contemporary perspectives on existence, consciousness, and meaning, building on ancient foundations while addressing modern challenges. From Descartes to Frankl, these thinkers bridge classical wisdom with modern understanding.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Tips -->
+        <section class="mb-16">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">Tips for Effective Learning</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-2xl mb-3">🎯</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Be Honest with Yourself</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Rate difficulty accurately. If you struggled, choose "Again" even if you eventually remembered. The algorithm works best when you're honest about your true level of understanding.
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-2xl mb-3">⏰</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Consistent Practice</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Short, regular sessions are more effective than long, infrequent ones. Even 5-10 minutes daily can lead to remarkable progress over time.
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-2xl mb-3">🤔</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Reflect Deeply</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Don't just memorize—contemplate how each quote applies to your life. The goal is transformation, not just retention.
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-2xl mb-3">📚</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Explore Broadly</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Use the Explore section to discover new quotes that resonate with you. Building a personal collection increases engagement and meaning.
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-2xl mb-3">📝</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Keep a Journal</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Consider keeping notes on how philosophical insights affect your thinking and decisions. This reinforces the practical value of what you're learning.
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-2xl mb-3">🌱</div>
+                    <h4 class="font-serif text-lg font-semibold mb-3">Be Patient</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Wisdom develops gradually. Trust the process and allow insights to unfold naturally over time. Some quotes may take months or years to fully appreciate.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credits -->
+        <section class="mb-16">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">Credits & Sources</h3>
+            
+            <div class="bg-white/60 backdrop-blur-sm rounded-lg p-8">
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    The philosophical quotes in this application are drawn from public domain sources and scholarly translations. We are grateful to the countless translators and scholars who have made these timeless insights accessible to modern readers.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-600">
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Primary Sources</h4>
+                        <ul class="space-y-1">
+                            <li>• Plato's Dialogues</li>
+                            <li>• Aristotle's Works</li>
+                            <li>• Marcus Aurelius - Meditations</li>
+                            <li>• Seneca - Letters from a Stoic</li>
+                            <li>• Epictetus - Discourses</li>
+                            <li>• Lao Tzu - Tao Te Ching</li>
+                            <li>• Confucius - The Analects</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Academic References</h4>
+                        <ul class="space-y-1">
+                            <li>• Hermann Ebbinghaus - Memory Research</li>
+                            <li>• Piotr Woźniak - SuperMemo Algorithm</li>
+                            <li>• Various scholarly translations</li>
+                            <li>• Philosophy encyclopedias and databases</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 text-sm mt-6 italic">
+                    "We stand on the shoulders of giants, both ancient and modern, who have dedicated their lives to understanding and sharing wisdom."
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-4">
+                <div class="font-serif text-xl mb-2">Wisdom</div>
+                <p class="text-gray-400 text-sm">
+                    Master ancient philosophy through spaced repetition
+                </p>
+            </div>
+            <div class="text-xs text-gray-500">
+                © 2024 Wisdom SRS. Designed for contemplative learning.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(button) {
+            const section = button.parentElement;
+            const icon = button.querySelector('svg');
+            const isCollapsed = section.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                section.classList.remove('collapsed');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                section.classList.add('collapsed');
+                icon.style.transform = 'rotate(-90deg)';
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            anime({
+                targets: '.fade-in',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                delay: anime.stagger(200),
+                duration: 800,
+                easing: 'easeOutQuad'
+            });
+
+            anime({
+                targets: '.methodology-card',
+                opacity: [0, 1],
+                scale: [0.9, 1],
+                delay: anime.stagger(100, {start: 500}),
+                duration: 600,
+                easing: 'easeOutQuad'
+            });
+        });
+    </script>
+</body>
+</html>

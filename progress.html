@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Progress - Wisdom SRS</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': {
+                            50: '#f6f7f5',
+                            100: '#e3e7e0',
+                            200: '#c7d0c1',
+                            300: '#a3b49a',
+                            400: '#7a8471',
+                            500: '#5d6b54',
+                            600: '#4a5543',
+                            700: '#3d4637',
+                            800: '#333a2f',
+                            900: '#2b3128',
+                        },
+                        'terracotta': {
+                            50: '#faf8f5',
+                            100: '#f2ede4',
+                            200: '#e4d8c4',
+                            300: '#d1bd9b',
+                            400: '#b8956a',
+                            500: '#a67c4a',
+                            600: '#8a6540',
+                            700: '#715337',
+                            800: '#5d4430',
+                            900: '#4e3a2a',
+                        },
+                        'ivory': '#f8f6f0',
+                        'charcoal': '#2c2c2c',
+                    },
+                    fontFamily: {
+                        'serif': ['Crimson Text', 'serif'],
+                        'sans': ['Source Sans Pro', 'sans-serif'],
+                        'accent': ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    
+    <style>
+        body {
+            background-color: #f8f6f0;
+            background-image: url('resources/parchment-texture.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #7a8471;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform-origin: 50% 50%;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .achievement-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        .achievement-badge.unlocked {
+            opacity: 1;
+        }
+        
+        .achievement-badge.locked {
+            opacity: 0.4;
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-charcoal">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-sm border-b border-sage-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-sage-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">W</span>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-xl font-semibold text-charcoal">Wisdom</h1>
+                        <p class="text-sm text-gray-600">Ancient Philosophy SRS</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Review</a>
+                    <a href="explore.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Explore</a>
+                    <a href="progress.html" class="nav-link active text-sage-700 font-medium">Progress</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-sage-50 to-terracotta-50 py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl font-bold text-charcoal mb-4">
+                Your Learning Journey
+            </h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+                Track your progress through the wisdom of the ages. 
+                See how your understanding deepens with each review session.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Overview Stats -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">Overview</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="stat-card bg-white/70 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-sage-600 mb-2" id="total-reviews">0</div>
+                    <div class="text-gray-600">Total Reviews</div>
+                    <div class="text-xs text-gray-500 mt-1">All-time sessions</div>
+                </div>
+                
+                <div class="stat-card bg-white/70 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-terracotta-600 mb-2" id="total-mastered">0</div>
+                    <div class="text-gray-600">Mastered Quotes</div>
+                    <div class="text-xs text-gray-500 mt-1">3+ successful reviews</div>
+                </div>
+                
+                <div class="stat-card bg-white/70 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-sage-600 mb-2" id="current-streak">0</div>
+                    <div class="text-gray-600">Day Streak</div>
+                    <div class="text-xs text-gray-500 mt-1">Consecutive study days</div>
+                </div>
+                
+                <div class="stat-card bg-white/70 rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-terracotta-600 mb-2" id="accuracy-rate">0%</div>
+                    <div class="text-gray-600">Accuracy Rate</div>
+                    <div class="text-xs text-gray-500 mt-1">Recent performance</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Mastery -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">Philosophy Mastery</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="progress-ring w-24 h-24">
+                            <circle class="progress-ring-circle stroke-sage-200" stroke-width="4" fill="transparent" r="40" cx="48" cy="48"/>
+                            <circle class="progress-ring-circle stroke-sage-600" stroke-width="4" fill="transparent" r="40" cx="48" cy="48" id="greek-progress"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-sage-600" id="greek-percentage">0%</span>
+                        </div>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold mb-2">Greek Philosophy</h4>
+                    <p class="text-sm text-gray-600">
+                        <span id="greek-mastered">0</span> of <span id="greek-total">0</span> mastered
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="progress-ring w-24 h-24">
+                            <circle class="progress-ring-circle stroke-terracotta-200" stroke-width="4" fill="transparent" r="40" cx="48" cy="48"/>
+                            <circle class="progress-ring-circle stroke-terracotta-600" stroke-width="4" fill="transparent" r="40" cx="48" cy="48" id="roman-progress"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-terracotta-600" id="roman-percentage">0%</span>
+                        </div>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold mb-2">Roman Stoicism</h4>
+                    <p class="text-sm text-gray-600">
+                        <span id="roman-mastered">0</span> of <span id="roman-total">0</span> mastered
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="progress-ring w-24 h-24">
+                            <circle class="progress-ring-circle stroke-sage-200" stroke-width="4" fill="transparent" r="40" cx="48" cy="48"/>
+                            <circle class="progress-ring-circle stroke-sage-600" stroke-width="4" fill="transparent" r="40" cx="48" cy="48" id="eastern-progress"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-sage-600" id="eastern-percentage">0%</span>
+                        </div>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold mb-2">Eastern Wisdom</h4>
+                    <p class="text-sm text-gray-600">
+                        <span id="eastern-mastered">0</span> of <span id="eastern-total">0</span> mastered
+                    </p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="progress-ring w-24 h-24">
+                            <circle class="progress-ring-circle stroke-terracotta-200" stroke-width="4" fill="transparent" r="40" cx="48" cy="48"/>
+                            <circle class="progress-ring-circle stroke-terracotta-600" stroke-width="4" fill="transparent" r="40" cx="48" cy="48" id="modern-progress"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-terracotta-600" id="modern-percentage">0%</span>
+                        </div>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold mb-2">Modern Insights</h4>
+                    <p class="text-sm text-gray-600">
+                        <span id="modern-mastered">0</span> of <span id="modern-total">0</span> mastered
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Learning Progress Chart -->
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <h4 class="font-serif text-xl font-semibold mb-6">Learning Progress</h4>
+                    <div id="progress-chart" style="height: 300px;"></div>
+                </div>
+                
+                <!-- Category Distribution -->
+                <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                    <h4 class="font-serif text-xl font-semibold mb-6">Philosophy Distribution</h4>
+                    <div id="distribution-chart" style="height: 300px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">Achievements</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="achievements-grid">
+                <!-- Achievements will be dynamically inserted -->
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-center">Recent Activity</h3>
+            <div class="bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                <div id="recent-activity">
+                    <div class="text-center py-8 text-gray-600">
+                        <div class="text-4xl mb-4">📊</div>
+                        <p>Start your first review session to see activity here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-4">
+                <div class="font-serif text-xl mb-2">Wisdom</div>
+                <p class="text-gray-400 text-sm">
+                    Master ancient philosophy through spaced repetition
+                </p>
+            </div>
+            <div class="text-xs text-gray-500">
+                © 2024 Wisdom SRS. Designed for contemplative learning.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Data and Main App -->
+    <script src="data.js"></script>
+    <script>
+        class ProgressTracker {
+            constructor() {
+                this.stats = getProgressStats();
+                this.init();
+            }
+
+            init() {
+                this.updateOverviewStats();
+                this.updateCategoryProgress();
+                this.createCharts();
+                this.renderAchievements();
+                this.renderRecentActivity();
+                this.animateElements();
+            }
+
+            updateOverviewStats() {
+                document.getElementById('total-reviews').textContent = this.stats.totalReviews;
+                document.getElementById('total-mastered').textContent = 
+                    Object.values(this.stats.categories).reduce((sum, cat) => sum + cat.mastered, 0);
+                document.getElementById('current-streak').textContent = this.stats.streak;
+                document.getElementById('accuracy-rate').textContent = '85%'; // Mock data
+            }
+
+            updateCategoryProgress() {
+                Object.keys(this.stats.categories).forEach(category => {
+                    const categoryData = this.stats.categories[category];
+                    const percentage = this.stats.mastery[category] || 0;
+                    const circumference = 2 * Math.PI * 40; // radius = 40
+                    const offset = circumference - (percentage / 100) * circumference;
+
+                    // Update progress ring
+                    const progressRing = document.getElementById(`${category}-progress`);
+                    if (progressRing) {
+                        progressRing.style.strokeDasharray = circumference;
+                        progressRing.style.strokeDashoffset = offset;
+                    }
+
+                    // Update text
+                    document.getElementById(`${category}-percentage`).textContent = Math.round(percentage) + '%';
+                    document.getElementById(`${category}-mastered`).textContent = categoryData.mastered;
+                    document.getElementById(`${category}-total`).textContent = categoryData.total;
+                });
+            }
+
+            createCharts() {
+                this.createProgressChart();
+                this.createDistributionChart();
+            }
+
+            createProgressChart() {
+                const chart = echarts.init(document.getElementById('progress-chart'));
+                
+                // Mock data for demonstration
+                const dates = [];
+                const mastered = [];
+                const learning = [];
+                
+                for (let i = 29; i >= 0; i--) {
+                    const date = new Date();
+                    date.setDate(date.getDate() - i);
+                    dates.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+                    mastered.push(Math.floor(Math.random() * 20) + 5);
+                    learning.push(Math.floor(Math.random() * 15) + 3);
+                }
+
+                const option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross'
+                        }
+                    },
+                    legend: {
+                        data: ['Mastered', 'Learning'],
+                        textStyle: {
+                            color: '#666'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: dates,
+                        axisLine: {
+                            lineStyle: {
+                                color: '#e5e7eb'
+                            }
+                        },
+                        axisLabel: {
+                            color: '#9ca3af'
+                        }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLine: {
+                            lineStyle: {
+                                color: '#e5e7eb'
+                            }
+                        },
+                        axisLabel: {
+                            color: '#9ca3af'
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: '#f3f4f6'
+                            }
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'Mastered',
+                            type: 'line',
+                            data: mastered,
+                            smooth: true,
+                            lineStyle: {
+                                color: '#7a8471'
+                            },
+                            itemStyle: {
+                                color: '#7a8471'
+                            },
+                            areaStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 0,
+                                    y2: 1,
+                                    colorStops: [{
+                                        offset: 0, color: 'rgba(122, 132, 113, 0.3)'
+                                    }, {
+                                        offset: 1, color: 'rgba(122, 132, 113, 0.05)'
+                                    }]
+                                }
+                            }
+                        },
+                        {
+                            name: 'Learning',
+                            type: 'line',
+                            data: learning,
+                            smooth: true,
+                            lineStyle: {
+                                color: '#b8956a'
+                            },
+                            itemStyle: {
+                                color: '#b8956a'
+                            },
+                            areaStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 0,
+                                    y2: 1,
+                                    colorStops: [{
+                                        offset: 0, color: 'rgba(184, 149, 106, 0.3)'
+                                    }, {
+                                        offset: 1, color: 'rgba(184, 149, 106, 0.05)'
+                                    }]
+                                }
+                            }
+                        }
+                    ]
+                };
+
+                chart.setOption(option);
+            }
+
+            createDistributionChart() {
+                const chart = echarts.init(document.getElementById('distribution-chart'));
+                
+                const data = [
+                    { value: this.stats.categories.greek.total, name: 'Greek Philosophy', itemStyle: { color: '#7a8471' } },
+                    { value: this.stats.categories.roman.total, name: 'Roman Stoicism', itemStyle: { color: '#b8956a' } },
+                    { value: this.stats.categories.eastern.total, name: 'Eastern Wisdom', itemStyle: { color: '#a3b49a' } },
+                    { value: this.stats.categories.modern.total, name: 'Modern Insights', itemStyle: { color: '#d1bd9b' } }
+                ];
+
+                const option = {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b}: {c} quotes ({d}%)'
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        textStyle: {
+                            color: '#666'
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'Philosophy Distribution',
+                            type: 'pie',
+                            radius: ['40%', '70%'],
+                            center: ['60%', '50%'],
+                            avoidLabelOverlap: false,
+                            label: {
+                                show: false,
+                                position: 'center'
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true,
+                                    fontSize: '18',
+                                    fontWeight: 'bold'
+                                }
+                            },
+                            labelLine: {
+                                show: false
+                            },
+                            data: data
+                        }
+                    ]
+                };
+
+                chart.setOption(option);
+            }
+
+            renderAchievements() {
+                const achievements = [
+                    { id: 'first_review', name: 'First Steps', description: 'Complete your first review', icon: '🎯', unlocked: this.stats.totalReviews > 0 },
+                    { id: 'streak_7', name: 'Week Warrior', description: '7-day study streak', icon: '🔥', unlocked: this.stats.streak >= 7 },
+                    { id: 'streak_30', name: 'Month Master', description: '30-day study streak', icon: '⭐', unlocked: this.stats.streak >= 30 },
+                    { id: 'greek_master', name: 'Greek Scholar', description: 'Master all Greek quotes', icon: '🏛️', unlocked: this.stats.mastery.greek >= 100 },
+                    { id: 'roman_master', name: 'Stoic Sage', description: 'Master all Roman quotes', icon: '⚖️', unlocked: this.stats.mastery.roman >= 100 },
+                    { id: 'eastern_master', name: 'Zen Master', description: 'Master all Eastern quotes', icon: '☯️', unlocked: this.stats.mastery.eastern >= 100 },
+                    { id: 'modern_master', name: 'Modern Mind', description: 'Master all modern quotes', icon: '🧠', unlocked: this.stats.mastery.modern >= 100 },
+                    { id: 'hundred_reviews', name: 'Century Club', description: 'Complete 100 reviews', icon: '💯', unlocked: this.stats.totalReviews >= 100 },
+                    { id: 'all_master', name: 'Philosopher King', description: 'Master all quotes', icon: '👑', unlocked: Object.values(this.stats.mastery).every(p => p >= 100) }
+                ];
+
+                const grid = document.getElementById('achievements-grid');
+                grid.innerHTML = achievements.map(achievement => `
+                    <div class="achievement-badge ${achievement.unlocked ? 'unlocked' : 'locked'} bg-white/70 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">${achievement.icon}</div>
+                        <div class="font-semibold text-sm mb-1">${achievement.name}</div>
+                        <div class="text-xs text-gray-600">${achievement.description}</div>
+                        ${achievement.unlocked ? 
+                            '<div class="text-xs text-green-600 mt-1 font-medium">Unlocked!</div>' : 
+                            '<div class="text-xs text-gray-400 mt-1">Locked</div>'
+                        }
+                    </div>
+                `).join('');
+            }
+
+            renderRecentActivity() {
+                const activity = [
+                    { type: 'review', text: 'Completed 5 reviews in Greek Philosophy', time: '2 hours ago', icon: '📚' },
+                    { type: 'mastered', text: 'Mastered "Know thyself" by Socrates', time: '1 day ago', icon: '🎯' },
+                    { type: 'streak', text: '7-day study streak achieved!', time: '1 day ago', icon: '🔥' },
+                    { type: 'review', text: 'Completed 3 reviews in Roman Stoicism', time: '2 days ago', icon: '📚' },
+                    { type: 'mastered', text: 'Mastered "The only true wisdom..." by Socrates', time: '3 days ago', icon: '🎯' }
+                ];
+
+                const container = document.getElementById('recent-activity');
+                container.innerHTML = `
+                    <div class="space-y-4">
+                        ${activity.map(item => `
+                            <div class="flex items-center space-x-4 p-4 bg-white/50 rounded-lg">
+                                <div class="text-2xl">${item.icon}</div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-800">${item.text}</div>
+                                    <div class="text-sm text-gray-600">${item.time}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            animateElements() {
+                // Animate stat cards
+                anime({
+                    targets: '.stat-card',
+                    opacity: [0, 1],
+                    translateY: [20, 0],
+                    delay: anime.stagger(100),
+                    duration: 600,
+                    easing: 'easeOutQuad'
+                });
+
+                // Animate progress rings
+                setTimeout(() => {
+                    Object.keys(this.stats.categories).forEach(category => {
+                        const percentage = this.stats.mastery[category] || 0;
+                        const circumference = 2 * Math.PI * 40;
+                        const offset = circumference - (percentage / 100) * circumference;
+                        
+                        anime({
+                            targets: `#${category}-progress`,
+                            strokeDashoffset: [circumference, offset],
+                            duration: 1000,
+                            easing: 'easeOutQuad'
+                        });
+                    });
+                }, 300);
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.progressTracker = new ProgressTracker();
+        });
+    </script>
+</body>
+</html>
