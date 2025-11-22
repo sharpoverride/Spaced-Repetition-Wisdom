@@ -135,7 +135,52 @@ const philosophicalSayings = {
       explanation: 'Systems and relationships create emergent properties that cannot be understood by examining components in isolation.',
       category: 'systems',
       difficulty: 'advanced'
-    }
+    },
+    {
+      id: 'greek_016',
+      text: 'Knowledge is the wing where the mind flies.',
+      philosopher: 'Plato',
+      period: '428-348 BCE',
+      explanation: 'Intellectual insight lifts us beyond the mundane.',
+      category: 'knowledge',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'greek_017',
+      text: 'Courage is the first of human qualities because it is the quality which guarantees the others.',
+      philosopher: 'Aristotle',
+      period: '384-322 BCE',
+      explanation: 'Without bravery, other virtues cannot be practiced.',
+      category: 'courage',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'greek_018',
+      text: 'The greatest wealth is to live content with little.',
+      philosopher: 'Plato',
+      period: '428-348 BCE',
+      explanation: 'True richness comes from inner peace and satisfaction, not material possessions.',
+      category: 'contentment',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'greek_019',
+      text: 'He who is not a good servant will not be a good master.',
+      philosopher: 'Plato',
+      period: '428-348 BCE',
+      explanation: 'Leadership requires understanding service and humility.',
+      category: 'virtue',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'greek_020',
+      text: 'Wonder is the beginning of wisdom.',
+      philosopher: 'Socrates',
+      period: '470-399 BCE',
+      explanation: 'Curiosity sparks the pursuit of knowledge.',
+      category: 'wisdom',
+      difficulty: 'beginner'
+    },
   ],
 
   roman: [
@@ -273,7 +318,52 @@ const philosophicalSayings = {
       explanation: 'Time is abundant when we use it wisely and purposefully, rather than wasting it on trivial pursuits.',
       category: 'time',
       difficulty: 'intermediate'
-    }
+    },
+    {
+      id: 'roman_016',
+      text: 'The universe is change; our life is what our thoughts make it.',
+      philosopher: 'Marcus Aurelius',
+      period: '121-180 CE',
+      explanation: 'Our perception shapes reality; by changing our thoughts, we transform our experience.',
+      category: 'perception',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'roman_017',
+      text: 'Begin each day by telling yourself: Today I shall be meeting with interference, ingratitude, insolence, disloyalty, ill-will, and selfishness.',
+      philosopher: 'Marcus Aurelius',
+      period: '121-180 CE',
+      explanation: 'Preparing mentally for difficulties makes us resilient and prevents disappointment.',
+      category: 'preparation',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'roman_018',
+      text: 'A gem cannot be polished without friction, nor a man perfected without trials.',
+      philosopher: 'Seneca',
+      period: '4 BCE-65 CE',
+      explanation: 'Challenges are necessary for growth and character development.',
+      category: 'growth',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'roman_019',
+      text: 'He who is brave is free.',
+      philosopher: 'Seneca',
+      period: '4 BCE-65 CE',
+      explanation: 'Courage liberates us from fear and external constraints.',
+      category: 'courage',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'roman_020',
+      text: 'The best way to avenge yourself is to not be like that.',
+      philosopher: 'Marcus Aurelius',
+      period: '121-180 CE',
+      explanation: 'Rising above wrongdoing through virtue is the truest form of victory.',
+      category: 'virtue',
+      difficulty: 'intermediate'
+    },
   ],
 
   eastern: [
@@ -411,7 +501,52 @@ const philosophicalSayings = {
       explanation: 'Wisdom comes from simplification and letting go of unnecessary complexity, not from accumulation.',
       category: 'wisdom',
       difficulty: 'advanced'
-    }
+    },
+    {
+      id: 'eastern_016',
+      text: 'The journey of a thousand miles begins with a single step.',
+      philosopher: 'Lao Tzu',
+      period: '6th century BCE',
+      explanation: 'Great endeavors start with small, decisive actions; the key is to begin.',
+      category: 'action',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'eastern_017',
+      text: 'When the student is ready, the teacher will appear.',
+      philosopher: 'Buddha',
+      period: '563-483 BCE',
+      explanation: 'Learning opportunities arise when we are prepared to receive them.',
+      category: 'learning',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'eastern_018',
+      text: 'He who knows others is wise; he who knows himself is enlightened.',
+      philosopher: 'Lao Tzu',
+      period: '6th century BCE',
+      explanation: 'Self-awareness surpasses knowledge of others in importance.',
+      category: 'self-knowledge',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'eastern_019',
+      text: 'The superior man is modest in his speech, but exceeds in his actions.',
+      philosopher: 'Confucius',
+      period: '551-479 BCE',
+      explanation: 'True excellence is demonstrated through deeds, not words.',
+      category: 'action',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'eastern_020',
+      text: 'Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.',
+      philosopher: 'Buddha',
+      period: '563-483 BCE',
+      explanation: 'Mindfulness and presence are the keys to peace and effectiveness.',
+      category: 'mindfulness',
+      difficulty: 'beginner'
+    },
   ],
 
   modern: [
@@ -549,6 +684,99 @@ const philosophicalSayings = {
       explanation: 'Challenges contain hidden possibilities for growth, innovation, and positive change.',
       category: 'opportunity',
       difficulty: 'beginner'
+    },
+    {
+      id: 'modern_016',
+      text: 'Who looks outside, dreams; who looks inside, awakes.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'True understanding comes from introspection rather than seeking answers in the external world.',
+      category: 'wisdom',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'modern_017',
+      text: 'The greatest discovery of my generation is that a human being can alter his life by altering his attitudes.',
+      philosopher: 'William James',
+      period: '1842-1910',
+      explanation: 'Our mindset determines our reality; changing our attitude can transform our life experience.',
+      category: 'mindset',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'modern_018',
+      text: 'The whole problem with the world is that fools and fanatics are always so certain of themselves, and wiser people so full of doubts.',
+      philosopher: 'Bertrand Russell',
+      period: '1872-1970',
+      explanation: 'Wisdom involves recognizing uncertainty, while ignorance often breeds false confidence.',
+      category: 'wisdom',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'modern_019',
+      text: 'Freedom is what you do with what\'s been done to you.',
+      philosopher: 'Jean-Paul Sartre',
+      period: '1905-1980',
+      explanation: 'We cannot control our past or circumstances, but we are free to choose how we respond to them.',
+      category: 'freedom',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'modern_020',
+      text: 'He who has a why to live can bear almost any how.',
+      philosopher: 'Friedrich Nietzsche',
+      period: '1844-1900',
+      explanation: 'Having a purpose or meaning in life enables us to endure significant hardships.',
+      category: 'purpose',
+      difficulty: 'intermediate'
+    }
+  ],
+
+  renaissance: [
+    {
+      id: 'renaissance_001',
+      text: 'It is better to be feared than loved, if you cannot be both.',
+      philosopher: 'Niccolò Machiavelli',
+      period: '1469-1527',
+      explanation: 'In leadership, commanding respect and fear is more reliable than relying on affection, though one should avoid being hated.',
+      category: 'power',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'renaissance_002',
+      text: 'The greatest thing in the world is to know how to belong to oneself.',
+      philosopher: 'Michel de Montaigne',
+      period: '1533-1592',
+      explanation: 'Self-possession and autonomy are the highest forms of personal achievement.',
+      category: 'self',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'renaissance_003',
+      text: 'Knowledge is power.',
+      philosopher: 'Francis Bacon',
+      period: '1561-1626',
+      explanation: 'Understanding and information provide the ability to influence and control outcomes.',
+      category: 'knowledge',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'renaissance_004',
+      text: 'Prevention is better than cure.',
+      philosopher: 'Desiderius Erasmus',
+      period: '1466-1536',
+      explanation: 'It is wiser to stop problems from happening than to try to fix them after they have occurred.',
+      category: 'wisdom',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'renaissance_005',
+      text: 'You wouldn\'t abandon ship in a storm just because you couldn\'t control the winds.',
+      philosopher: 'Thomas More',
+      period: '1478-1535',
+      explanation: 'We must persist in our duties and efforts even when circumstances are difficult and beyond our control.',
+      category: 'perseverance',
+      difficulty: 'intermediate'
     }
   ]
 };
@@ -563,7 +791,8 @@ let userProgress = {
     greek: { mastered: 0, learning: 0, total: 0 },
     roman: { mastered: 0, learning: 0, total: 0 },
     eastern: { mastered: 0, learning: 0, total: 0 },
-    modern: { mastered: 0, learning: 0, total: 0 }
+    modern: { mastered: 0, learning: 0, total: 0 },
+    renaissance: { mastered: 0, learning: 0, total: 0 }
   },
   achievements: [],
   journalEntries: []
