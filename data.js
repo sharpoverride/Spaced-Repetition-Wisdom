@@ -777,6 +777,51 @@ const philosophicalSayings = {
       explanation: 'We must persist in our duties and efforts even when circumstances are difficult and beyond our control.',
       category: 'perseverance',
       difficulty: 'intermediate'
+    },
+    {
+      id: 'renaissance_006',
+      text: 'The greater danger for most of us lies not in setting our aim too high and falling short; but in setting our aim too low, and achieving our mark.',
+      philosopher: 'Michelangelo',
+      period: '1475-1564',
+      explanation: 'Ambition and high standards are crucial; mediocrity is a greater trap than failure.',
+      category: 'ambition',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'renaissance_007',
+      text: 'Time is a vindictive bandit to steal the beauty of our former selves.',
+      philosopher: 'Raphael',
+      period: '1483-1520',
+      explanation: 'Aging is inevitable, and we must accept the passage of time and the changes it brings.',
+      category: 'time',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'renaissance_008',
+      text: 'Five enemies of peace inhabit with us: avarice, ambition, envy, anger, and pride.',
+      philosopher: 'Petrarch',
+      period: '1304-1374',
+      explanation: 'Inner peace is destroyed by our own negative emotions and vices, not just external conflict.',
+      category: 'peace',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'renaissance_009',
+      text: 'I cannot live under pressures from patrons, let alone paint.',
+      philosopher: 'Michelangelo',
+      period: '1475-1564',
+      explanation: 'Creative freedom is essential for producing one\'s best work; external pressure stifles art.',
+      category: 'freedom',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'renaissance_010',
+      text: 'There is no greater agony than bearing an untold story inside you.',
+      philosopher: 'Maya Angelou (attributed to Renaissance spirit)',
+      period: 'Modern/Timeless',
+      explanation: 'Self-expression is a fundamental human need; suppression leads to suffering.',
+      category: 'expression',
+      difficulty: 'intermediate'
     }
   ],
 
@@ -1243,6 +1288,471 @@ const philosophicalSayings = {
       category: 'wonder',
       difficulty: 'advanced'
     }
+  ],
+
+  leadership: [
+    {
+      id: 'leadership_001',
+      text: 'A leader is a dealer in hope.',
+      philosopher: 'Napoleon Bonaparte',
+      period: '1769-1821',
+      explanation: 'The primary role of a leader is to inspire and provide a vision of a better future.',
+      category: 'inspiration',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'leadership_002',
+      text: 'To handle yourself, use your head; to handle others, use your heart.',
+      philosopher: 'Eleanor Roosevelt',
+      period: '1884-1962',
+      explanation: 'Self-discipline requires logic, but leading people requires empathy and emotional intelligence.',
+      category: 'empathy',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'leadership_003',
+      text: 'The supreme art of war is to subdue the enemy without fighting.',
+      philosopher: 'Sun Tzu',
+      period: '544-496 BCE',
+      explanation: 'True strategic mastery involves achieving goals through diplomacy and strategy rather than conflict.',
+      category: 'strategy',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'leadership_004',
+      text: 'It is better to lead from behind and to put others in front, especially when you celebrate victory when nice things occur. You take the front line when there is danger.',
+      philosopher: 'Nelson Mandela',
+      period: '1918-2013',
+      explanation: 'True leaders empower their team during success and protect them during crisis.',
+      category: 'humility',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'leadership_005',
+      text: 'Management is doing things right; leadership is doing the right things.',
+      philosopher: 'Peter Drucker',
+      period: '1909-2005',
+      explanation: 'Management focuses on efficiency, while leadership focuses on vision and ethical direction.',
+      category: 'vision',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'leadership_006',
+      text: 'If your actions inspire others to dream more, learn more, do more and become more, you are a leader.',
+      philosopher: 'John Quincy Adams',
+      period: '1767-1848',
+      explanation: 'Leadership is defined by the positive impact and growth you stimulate in others.',
+      category: 'influence',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'leadership_007',
+      text: 'A good leader takes a little more than his share of the blame, a little less than his share of the credit.',
+      philosopher: 'Arnold H. Glasow',
+      period: '1905-1998',
+      explanation: 'Accountability and generosity are hallmarks of respected leadership.',
+      category: 'integrity',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'leadership_008',
+      text: 'Keep your fears to yourself, but share your courage with others.',
+      philosopher: 'Robert Louis Stevenson',
+      period: '1850-1894',
+      explanation: 'Leaders must project stability and confidence to reassure their followers, even when afraid.',
+      category: 'courage',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'leadership_009',
+      text: 'The quality of a leader is reflected in the standards they set for themselves.',
+      philosopher: 'Ray Kroc',
+      period: '1902-1984',
+      explanation: 'Leading by example through high personal standards is the most effective way to influence.',
+      category: 'standards',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'leadership_010',
+      text: 'Leadership and learning are indispensable to each other.',
+      philosopher: 'John F. Kennedy',
+      period: '1917-1963',
+      explanation: 'Effective leadership requires continuous growth and adaptation to new information.',
+      category: 'growth',
+      difficulty: 'intermediate'
+    }
+  ],
+
+  nature: [
+    {
+      id: 'nature_001',
+      text: 'In every walk with nature one receives far more than he seeks.',
+      philosopher: 'John Muir',
+      period: '1838-1914',
+      explanation: 'Nature provides spiritual and physical restoration beyond our expectations.',
+      category: 'restoration',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'nature_002',
+      text: 'Adopt the pace of nature: her secret is patience.',
+      philosopher: 'Ralph Waldo Emerson',
+      period: '1803-1882',
+      explanation: 'Nature achieves great things without rushing; we should emulate this steady, patient progress.',
+      category: 'patience',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'nature_003',
+      text: 'The clearest way into the Universe is through a forest wilderness.',
+      philosopher: 'John Muir',
+      period: '1838-1914',
+      explanation: 'Immersion in wild nature connects us to the fundamental truths of existence.',
+      category: 'connection',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'nature_004',
+      text: 'Look deep into nature, and then you will understand everything better.',
+      philosopher: 'Albert Einstein',
+      period: '1879-1955',
+      explanation: 'Observing natural laws provides insight into all aspects of life and reality.',
+      category: 'insight',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'nature_005',
+      text: 'Nature does not hurry, yet everything is accomplished.',
+      philosopher: 'Lao Tzu',
+      period: '6th century BCE',
+      explanation: 'Effortless action (Wu Wei) allows for completion without stress or haste.',
+      category: 'flow',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'nature_006',
+      text: 'To forget how to dig the earth and to tend the soil is to forget ourselves.',
+      philosopher: 'Mahatma Gandhi',
+      period: '1869-1948',
+      explanation: 'Connection to the land and agriculture is essential for human grounding and identity.',
+      category: 'grounding',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'nature_007',
+      text: 'The earth has music for those who listen.',
+      philosopher: 'William Shakespeare',
+      period: '1564-1616',
+      explanation: 'Beauty and harmony are always present in nature if we pay attention.',
+      category: 'beauty',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'nature_008',
+      text: 'We abuse land because we regard it as a commodity belonging to us. When we see land as a community to which we belong, we may begin to use it with love and respect.',
+      philosopher: 'Aldo Leopold',
+      period: '1887-1948',
+      explanation: 'Shifting from ownership to stewardship is vital for ecological ethics.',
+      category: 'stewardship',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'nature_009',
+      text: 'Nature is not a place to visit. It is home.',
+      philosopher: 'Gary Snyder',
+      period: '1930-',
+      explanation: 'We are not separate from nature; we are an integral part of it.',
+      category: 'belonging',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'nature_010',
+      text: 'Come forth into the light of things, let nature be your teacher.',
+      philosopher: 'William Wordsworth',
+      period: '1770-1850',
+      explanation: 'Direct experience of the natural world is a superior source of wisdom to books alone.',
+      category: 'wisdom',
+      difficulty: 'intermediate'
+    }
+  ],
+
+  humor: [
+    {
+      id: 'humor_001',
+      text: 'The human race has one really effective weapon, and that is laughter.',
+      philosopher: 'Mark Twain',
+      period: '1835-1910',
+      explanation: 'Humor is a powerful tool for resilience and coping with life\'s difficulties.',
+      category: 'resilience',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'humor_002',
+      text: 'Life is too important to be taken seriously.',
+      philosopher: 'Oscar Wilde',
+      period: '1854-1900',
+      explanation: 'A lighthearted approach often reveals more truth than solemnity.',
+      category: 'perspective',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'humor_003',
+      text: 'I refuse to join any club that would have me as a member.',
+      philosopher: 'Groucho Marx',
+      period: '1890-1977',
+      explanation: 'Self-deprecation and skepticism of status are signs of a grounded ego.',
+      category: 'humility',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'humor_004',
+      text: 'Common sense is the collection of prejudices acquired by age eighteen.',
+      philosopher: 'Albert Einstein',
+      period: '1879-1955',
+      explanation: 'What we consider "obvious" is often just culturally conditioned bias.',
+      category: 'wisdom',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'humor_005',
+      text: 'A day without laughter is a day wasted.',
+      philosopher: 'Charlie Chaplin',
+      period: '1889-1977',
+      explanation: 'Joy and humor are essential components of a meaningful life.',
+      category: 'joy',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'humor_006',
+      text: 'The secret of life is honesty and fair dealing. If you can fake that, you\'ve got it made.',
+      philosopher: 'Groucho Marx',
+      period: '1890-1977',
+      explanation: 'A cynical look at how society often values the appearance of virtue over virtue itself.',
+      category: 'cynicism',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'humor_007',
+      text: 'Always forgive your enemies; nothing annoys them so much.',
+      philosopher: 'Oscar Wilde',
+      period: '1854-1900',
+      explanation: 'Forgiveness can be a strategic act of power as well as a moral virtue.',
+      category: 'strategy',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'humor_008',
+      text: 'I have not failed. I\'ve just found 10,000 ways that won\'t work.',
+      philosopher: 'Thomas Edison',
+      period: '1847-1931',
+      explanation: 'Reframing failure as learning is a key to persistence and innovation.',
+      category: 'persistence',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'humor_009',
+      text: 'Better to remain silent and be thought a fool than to speak out and remove all doubt.',
+      philosopher: 'Abraham Lincoln',
+      period: '1809-1865',
+      explanation: 'Restraint in speech is often a greater sign of wisdom than constant talking.',
+      category: 'silence',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'humor_010',
+      text: 'If you think you are too small to make a difference, try sleeping with a mosquito.',
+      philosopher: 'Dalai Lama',
+      period: '1935-',
+      explanation: 'Even the smallest entity can have a significant impact on its environment.',
+      category: 'impact',
+      difficulty: 'beginner'
+    }
+  ],
+
+  time: [
+    {
+      id: 'time_001',
+      text: 'It is not that we have a short time to live, but that we waste a lot of it.',
+      philosopher: 'Seneca',
+      period: '4 BCE-65 CE',
+      explanation: 'Life is long enough if we use it wisely; the problem is our squandering of time on trivialities.',
+      category: 'management',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'time_002',
+      text: 'The two most powerful warriors are patience and time.',
+      philosopher: 'Leo Tolstoy',
+      period: '1828-1910',
+      explanation: 'Endurance and the passage of time can resolve problems that force and haste cannot.',
+      category: 'patience',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'time_003',
+      text: 'Time is the most valuable thing a man can spend.',
+      philosopher: 'Theophrastus',
+      period: '371-287 BCE',
+      explanation: 'Unlike money, time cannot be regained once lost, making it our most precious resource.',
+      category: 'value',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'time_004',
+      text: 'Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.',
+      philosopher: 'Bil Keane',
+      period: '1922-2011',
+      explanation: 'The only moment we truly possess and can act within is the current one.',
+      category: 'presence',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'time_005',
+      text: 'Dost thou love life? Then do not squander time, for that\'s the stuff life is made of.',
+      philosopher: 'Benjamin Franklin',
+      period: '1706-1790',
+      explanation: 'To waste time is to waste life itself, as our existence is measured in time.',
+      category: 'urgency',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'time_006',
+      text: 'Time changes everything except something within us which is always surprised by change.',
+      philosopher: 'Thomas Hardy',
+      period: '1840-1928',
+      explanation: 'While the external world is in constant flux, our inner consciousness often feels timeless.',
+      category: 'change',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'time_007',
+      text: 'The future starts today, not tomorrow.',
+      philosopher: 'Pope John Paul II',
+      period: '1920-2005',
+      explanation: 'Procrastination delays our future; we build it through our actions in the present.',
+      category: 'action',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'time_008',
+      text: 'Life can only be understood backwards; but it must be lived forwards.',
+      philosopher: 'Søren Kierkegaard',
+      period: '1813-1855',
+      explanation: 'Meaning often emerges only in retrospect, yet we must make decisions without that hindsight.',
+      category: 'understanding',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'time_009',
+      text: 'They always say time changes things, but you actually have to change them yourself.',
+      philosopher: 'Andy Warhol',
+      period: '1928-1987',
+      explanation: 'Passive waiting for time to fix things is ineffective; active agency is required for change.',
+      category: 'agency',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'time_010',
+      text: 'Time is a created thing. To say \'I don\'t have time,\' is like saying, \'I don\'t want to.\'',
+      philosopher: 'Lao Tzu',
+      period: '6th century BCE',
+      explanation: 'We prioritize what matters to us; lack of time is often a lack of priority.',
+      category: 'priorities',
+      difficulty: 'advanced'
+    }
+  ],
+
+  jung: [
+    {
+      id: 'jung_001',
+      text: 'One does not become enlightened by imagining figures of light, but by making the darkness conscious.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'True growth comes from facing our own shadow and hidden nature, not just seeking positivity.',
+      category: 'shadow',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'jung_002',
+      text: 'Until you make the unconscious conscious, it will direct your life and you will call it fate.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'Unexamined patterns and complexes control our behavior until we bring them into awareness.',
+      category: 'consciousness',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'jung_003',
+      text: 'I am not what happened to me, I am what I choose to become.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'We have the agency to define ourselves by our choices rather than being defined by our past trauma.',
+      category: 'agency',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'jung_004',
+      text: 'The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'Deep human connection inevitably changes both participants.',
+      category: 'relationships',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'jung_005',
+      text: 'Everything that irritates us about others can lead us to an understanding of ourselves.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'Our projections onto others reveal our own hidden traits (the shadow).',
+      category: 'projection',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'jung_006',
+      text: 'Your visions will become clear only when you can look into your own heart. Who looks outside, dreams; who looks inside, awakes.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'True insight and awakening are internal processes, not found in the external world.',
+      category: 'introspection',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'jung_007',
+      text: 'Thinking is difficult, that’s why most people judge.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'Critical thinking requires effort and nuance, whereas judgment is a lazy shortcut.',
+      category: 'judgment',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'jung_008',
+      text: 'The pendulum of the mind oscillates between sense and nonsense, not between right and wrong.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'The human mind is driven by meaning and absurdity more than by moral binaries.',
+      category: 'mind',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'jung_009',
+      text: 'Where love rules, there is no will to power, and where power predominates, love is lacking. The one is the shadow of the other.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'Love and the desire for control are opposing forces; you cannot fully have both simultaneously.',
+      category: 'power',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'jung_010',
+      text: 'A man who has not passed through the inferno of his passions has never overcome them.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'We must experience and integrate our emotions to master them, rather than repressing them.',
+      category: 'integration',
+      difficulty: 'intermediate'
+    }
   ]
 };
 
@@ -1262,7 +1772,12 @@ let userProgress = {
     living: { mastered: 0, learning: 0, total: 0 },
     wealth: { mastered: 0, learning: 0, total: 0 },
     creativity: { mastered: 0, learning: 0, total: 0 },
-    science: { mastered: 0, learning: 0, total: 0 }
+    science: { mastered: 0, learning: 0, total: 0 },
+    leadership: { mastered: 0, learning: 0, total: 0 },
+    nature: { mastered: 0, learning: 0, total: 0 },
+    humor: { mastered: 0, learning: 0, total: 0 },
+    time: { mastered: 0, learning: 0, total: 0 },
+    jung: { mastered: 0, learning: 0, total: 0 }
   },
   achievements: [],
   journalEntries: []

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Philosophy - Wisdom SRS</title>
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -51,10 +54,10 @@
             }
         }
     </script>
-    
+
     <!-- Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    
+
     <style>
         body {
             background-color: #f8f6f0;
@@ -62,12 +65,12 @@
             background-size: cover;
             background-attachment: fixed;
         }
-        
+
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -79,53 +82,60 @@
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
-        
+
         .nav-link:hover::after,
         .nav-link.active::after {
             width: 100%;
         }
-        
+
         .philosophy-card {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-        
+
         .philosophy-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
+
         .category-tab {
             transition: all 0.3s ease;
         }
-        
+
         .category-tab.active {
             background: linear-gradient(135deg, #7a8471 0%, #b8956a 100%);
             color: white;
         }
-        
+
         .fade-in {
             animation: fadeIn 0.6s ease-out;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .add-to-deck-btn {
             transition: all 0.3s ease;
         }
-        
+
         .add-to-deck-btn:hover {
             transform: scale(1.05);
         }
-        
+
         .add-to-deck-btn.added {
             background-color: #10b981;
             color: white;
         }
-        
+
         .search-highlight {
             background-color: #fef3c7;
             padding: 0 2px;
@@ -133,6 +143,7 @@
         }
     </style>
 </head>
+
 <body class="font-sans text-charcoal">
     <!-- Navigation -->
     <nav class="bg-white/80 backdrop-blur-sm border-b border-sage-200 sticky top-0 z-50">
@@ -147,7 +158,7 @@
                         <p class="text-sm text-gray-600">Ancient Philosophy SRS</p>
                     </div>
                 </div>
-                
+
                 <div class="flex items-center space-x-8">
                     <a href="index.html" class="nav-link text-gray-600 hover:text-sage-700 font-medium">Review</a>
                     <a href="explore.html" class="nav-link active text-sage-700 font-medium">Explore</a>
@@ -165,7 +176,7 @@
                 Explore Ancient Wisdom
             </h2>
             <p class="text-xl text-gray-700 max-w-2xl mx-auto">
-                Discover profound insights from the greatest minds in human history. 
+                Discover profound insights from the greatest minds in human history.
                 Add meaningful quotes to your personal learning deck.
             </p>
         </div>
@@ -177,39 +188,80 @@
             <!-- Search Bar -->
             <div class="mb-6">
                 <div class="relative">
-                    <input 
-                        type="text" 
-                        id="search-input" 
-                        placeholder="Search quotes, philosophers, or concepts..."
-                        class="w-full px-4 py-3 pl-12 bg-white rounded-lg border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent"
-                    >
+                    <input type="text" id="search-input" placeholder="Search quotes, philosophers, or concepts..."
+                        class="w-full px-4 py-3 pl-12 bg-white rounded-lg border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent">
                     <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Category Tabs -->
             <div class="flex flex-wrap gap-2 mb-6">
                 <button class="category-tab active px-6 py-2 rounded-lg font-medium" data-category="all">
                     All Traditions
                 </button>
-                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="greek">
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="greek">
                     Greek Philosophy
                 </button>
-                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="roman">
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="roman">
                     Roman Stoicism
                 </button>
-                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="eastern">
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="eastern">
                     Eastern Wisdom
                 </button>
-                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100" data-category="modern">
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="modern">
                     Modern Insights
                 </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="renaissance">
+                    Renaissance
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="love">
+                    Love & Relationships
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="living">
+                    Art of Living
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="wealth">
+                    Wealth & Prosperity
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="creativity">
+                    Creativity & Art
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="science">
+                    Science & Reason
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="leadership">
+                    Leadership
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="nature">
+                    Nature
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="humor">
+                    Humor
+                </button>
+                <button class="category-tab px-6 py-2 rounded-lg font-medium bg-white hover:bg-sage-100"
+                    data-category="time">
+                    Time
+                </button>
             </div>
-            
+
             <!-- Results Info -->
             <div class="text-sm text-gray-600">
                 <span id="results-count">Loading...</span>
@@ -222,13 +274,13 @@
         <div id="philosophy-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Cards will be dynamically inserted here -->
         </div>
-        
+
         <!-- Loading State -->
         <div id="loading-state" class="text-center py-12">
             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-sage-600"></div>
             <p class="mt-4 text-gray-600">Loading wisdom...</p>
         </div>
-        
+
         <!-- No Results State -->
         <div id="no-results" class="text-center py-12 hidden">
             <div class="text-6xl mb-4">🔍</div>
@@ -238,7 +290,8 @@
     </main>
 
     <!-- Success Toast -->
-    <div id="toast" class="fixed top-20 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div id="toast"
+        class="fixed top-20 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
         <div class="flex items-center space-x-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -310,17 +363,17 @@
 
             switchCategory(category) {
                 this.currentCategory = category;
-                
+
                 // Update tab styles
                 document.querySelectorAll('.category-tab').forEach(tab => {
                     tab.classList.remove('active');
                     tab.classList.add('bg-white', 'hover:bg-sage-100');
                 });
-                
+
                 const activeTab = document.querySelector(`[data-category="${category}"]`);
                 activeTab.classList.add('active');
                 activeTab.classList.remove('bg-white', 'hover:bg-sage-100');
-                
+
                 this.renderQuotes();
             }
 
@@ -328,14 +381,14 @@
                 return this.allQuotes.filter(quote => {
                     // Category filter
                     const categoryMatch = this.currentCategory === 'all' || quote.category === this.currentCategory;
-                    
+
                     // Search filter
-                    const searchMatch = this.searchTerm === '' || 
+                    const searchMatch = this.searchTerm === '' ||
                         quote.text.toLowerCase().includes(this.searchTerm) ||
                         quote.philosopher.toLowerCase().includes(this.searchTerm) ||
                         quote.explanation.toLowerCase().includes(this.searchTerm) ||
                         quote.category.toLowerCase().includes(this.searchTerm);
-                    
+
                     return categoryMatch && searchMatch;
                 });
             }
@@ -345,21 +398,21 @@
                 const grid = document.getElementById('philosophy-grid');
                 const resultsCount = document.getElementById('results-count');
                 const noResults = document.getElementById('no-results');
-                
+
                 // Update results count
                 resultsCount.textContent = `${filteredQuotes.length} quote${filteredQuotes.length !== 1 ? 's' : ''} found`;
-                
+
                 if (filteredQuotes.length === 0) {
                     grid.innerHTML = '';
                     noResults.classList.remove('hidden');
                     return;
                 }
-                
+
                 noResults.classList.add('hidden');
-                
+
                 // Render quote cards
                 grid.innerHTML = filteredQuotes.map(quote => this.createQuoteCard(quote)).join('');
-                
+
                 // Animate cards
                 anime({
                     targets: '.philosophy-card',
@@ -375,7 +428,7 @@
                 const isAdded = userProgress.cards[quote.id] && userProgress.cards[quote.id].repetitions > 0;
                 const highlightedText = this.highlightSearchTerm(quote.text);
                 const highlightedPhilosopher = this.highlightSearchTerm(quote.philosopher);
-                
+
                 return `
                     <div class="philosophy-card bg-white/70 rounded-lg p-6 shadow-lg border border-sage-200 opacity-0">
                         <div class="mb-4">
@@ -417,7 +470,7 @@
 
             highlightSearchTerm(text) {
                 if (!this.searchTerm) return text;
-                
+
                 const regex = new RegExp(`(${this.searchTerm})`, 'gi');
                 return text.replace(regex, '<span class="search-highlight">$1</span>');
             }
@@ -429,7 +482,7 @@
             showToast() {
                 const toast = document.getElementById('toast');
                 toast.classList.remove('translate-x-full');
-                
+
                 setTimeout(() => {
                     toast.classList.add('translate-x-full');
                 }, 3000);
@@ -440,14 +493,11 @@
         document.addEventListener('click', (e) => {
             if (e.target.matches('.add-to-deck-btn') && !e.target.disabled) {
                 const quoteId = e.target.dataset.quoteId;
-                
+
                 // Add to user's learning deck
                 if (!userProgress.cards[quoteId]) {
-                    const [category] = quoteId.split('_');
-                    const categoryKey = category === 'greek' ? 'greek' : 
-                                       category === 'roman' ? 'roman' : 
-                                       category === 'eastern' ? 'eastern' : 'modern';
-                    
+                    const [categoryKey] = quoteId.split('_');
+
                     userProgress.cards[quoteId] = {
                         interval: 0,
                         repetitions: 0,
@@ -456,17 +506,17 @@
                         category: categoryKey,
                         difficulty: 'beginner'
                     };
-                    
+
                     saveProgress();
-                    
+
                     // Update button
                     e.target.textContent = 'Added ✓';
                     e.target.classList.add('added', 'bg-green-500');
                     e.target.disabled = true;
-                    
+
                     // Show toast
                     window.philosophyExplorer.showToast();
-                    
+
                     // Animate button
                     anime({
                         targets: e.target,
@@ -484,4 +534,5 @@
         });
     </script>
 </body>
+
 </html>
