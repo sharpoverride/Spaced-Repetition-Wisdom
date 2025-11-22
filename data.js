@@ -778,6 +778,471 @@ const philosophicalSayings = {
       category: 'perseverance',
       difficulty: 'intermediate'
     }
+  ],
+
+  love: [
+    {
+      id: 'love_001',
+      text: 'Love is composed of a single soul inhabiting two bodies.',
+      philosopher: 'Aristotle',
+      period: '384-322 BCE',
+      explanation: 'True love creates a profound spiritual unity between two people.',
+      category: 'connection',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'love_002',
+      text: 'At the touch of love everyone becomes a poet.',
+      philosopher: 'Plato',
+      period: '428-348 BCE',
+      explanation: 'Love inspires creativity and elevates our expression and perception of the world.',
+      category: 'inspiration',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'love_003',
+      text: 'Immature love says: \'I love you because I need you.\' Mature love says: \'I need you because I love you.\'',
+      philosopher: 'Erich Fromm',
+      period: '1900-1980',
+      explanation: 'True love is based on giving and appreciation, not on dependency or using the other person.',
+      category: 'maturity',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'love_004',
+      text: 'The way to love anything is to realize that it may be lost.',
+      philosopher: 'G.K. Chesterton',
+      period: '1874-1936',
+      explanation: 'Awareness of impermanence deepens our appreciation and cherishing of what we love.',
+      category: 'appreciation',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'love_005',
+      text: 'Love is the child of freedom, never that of domination.',
+      philosopher: 'Erich Fromm',
+      period: '1900-1980',
+      explanation: 'Love can only flourish when both partners are free; control and possession destroy it.',
+      category: 'freedom',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'love_006',
+      text: 'We are asleep. With one another\'s help, we may wake.',
+      philosopher: 'Rumi',
+      period: '1207-1273',
+      explanation: 'Relationships can be a catalyst for spiritual awakening and self-realization.',
+      category: 'growth',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'love_007',
+      text: 'To love is to recognize yourself in another.',
+      philosopher: 'Eckhart Tolle',
+      period: '1948-',
+      explanation: 'Love dissolves the illusion of separation, revealing our shared essence.',
+      category: 'oneness',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'love_008',
+      text: 'Love is an act of endless forgiveness, a tender look which becomes a habit.',
+      philosopher: 'Peter Ustinov',
+      period: '1921-2004',
+      explanation: 'Sustaining love requires constant patience, acceptance, and choosing kindness.',
+      category: 'forgiveness',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'love_009',
+      text: 'One word frees us of all the weight and pain of life: that word is love.',
+      philosopher: 'Sophocles',
+      period: '497-406 BCE',
+      explanation: 'Love has the power to heal suffering and lighten the burdens of existence.',
+      category: 'healing',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'love_010',
+      text: 'Absence is to love what wind is to fire; it extinguishes the small, it inflames the great.',
+      philosopher: 'Roger de Bussy-Rabutin',
+      period: '1618-1693',
+      explanation: 'True love is strengthened by separation, while superficial attraction fades.',
+      category: 'endurance',
+      difficulty: 'intermediate'
+    }
+  ],
+
+  living: [
+    {
+      id: 'living_001',
+      text: 'The art of living is more like wrestling than dancing.',
+      philosopher: 'Marcus Aurelius',
+      period: '121-180 CE',
+      explanation: 'Life requires readiness to stand firm against sudden and unforeseen challenges.',
+      category: 'resilience',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'living_002',
+      text: 'Simplicity is the ultimate sophistication.',
+      philosopher: 'Leonardo da Vinci',
+      period: '1452-1519',
+      explanation: 'True refinement and mastery are found in eliminating the unnecessary.',
+      category: 'simplicity',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'living_003',
+      text: 'Beware the barrenness of a busy life.',
+      philosopher: 'Socrates',
+      period: '470-399 BCE',
+      explanation: 'Constant activity without reflection or purpose leads to an empty existence.',
+      category: 'balance',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'living_004',
+      text: 'Live as if you were to die tomorrow. Learn as if you were to live forever.',
+      philosopher: 'Mahatma Gandhi',
+      period: '1869-1948',
+      explanation: 'Balance the urgency of living fully in the present with the long-term value of growth.',
+      category: 'growth',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'living_005',
+      text: 'It is not the man who has too little, but the man who craves more, that is poor.',
+      philosopher: 'Seneca',
+      period: '4 BCE-65 CE',
+      explanation: 'Poverty is a state of mind defined by desire, not by the amount of possessions.',
+      category: 'contentment',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'living_006',
+      text: 'To live is the rarest thing in the world. Most people exist, that is all.',
+      philosopher: 'Oscar Wilde',
+      period: '1854-1900',
+      explanation: 'True living involves passion, awareness, and engagement, not just biological survival.',
+      category: 'purpose',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'living_007',
+      text: 'Do not spoil what you have by desiring what you have not.',
+      philosopher: 'Epicurus',
+      period: '341-270 BCE',
+      explanation: 'Happiness is found in appreciating present blessings rather than focusing on lack.',
+      category: 'gratitude',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'living_008',
+      text: 'Life is really simple, but we insist on making it complicated.',
+      philosopher: 'Confucius',
+      period: '551-479 BCE',
+      explanation: 'Complexity often arises from our own desires, anxieties, and unnecessary additions.',
+      category: 'simplicity',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'living_009',
+      text: 'The privilege of a lifetime is to become who you truly are.',
+      philosopher: 'Carl Jung',
+      period: '1875-1961',
+      explanation: 'The ultimate goal of life is self-realization and authenticity.',
+      category: 'authenticity',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'living_010',
+      text: 'We must be willing to let go of the life we planned so as to have the life that is waiting for us.',
+      philosopher: 'Joseph Campbell',
+      period: '1904-1987',
+      explanation: 'Embracing our true path often requires releasing our rigid expectations and controlling nature.',
+      category: 'acceptance',
+      difficulty: 'intermediate'
+    }
+  ],
+
+  wealth: [
+    {
+      id: 'wealth_001',
+      text: 'Wealth consists not in having great possessions, but in having few wants.',
+      philosopher: 'Epictetus',
+      period: '50-135 CE',
+      explanation: 'True wealth is defined by freedom from desire rather than the accumulation of material goods.',
+      category: 'contentment',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'wealth_002',
+      text: 'It is not the man who has too little, but the man who craves more, that is poor.',
+      philosopher: 'Seneca',
+      period: '4 BCE-65 CE',
+      explanation: 'Poverty is a state of mind characterized by insatiable desire.',
+      category: 'mindset',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'wealth_003',
+      text: 'The real measure of your wealth is how much you\'d be worth if you lost all your money.',
+      philosopher: 'Anonymous',
+      period: 'Unknown',
+      explanation: 'True value lies in character, skills, and relationships, which cannot be taken away.',
+      category: 'character',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'wealth_004',
+      text: 'Money is a terrible master but an excellent servant.',
+      philosopher: 'P.T. Barnum',
+      period: '1810-1891',
+      explanation: 'Money should be a tool to achieve your goals, not the driving force that controls your life.',
+      category: 'control',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'wealth_005',
+      text: 'A wise man should have money in his head, but not in his heart.',
+      philosopher: 'Jonathan Swift',
+      period: '1667-1745',
+      explanation: 'Manage finances intelligently without becoming emotionally attached or corrupted by them.',
+      category: 'wisdom',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'wealth_006',
+      text: 'Wealth is the ability to fully experience life.',
+      philosopher: 'Henry David Thoreau',
+      period: '1817-1862',
+      explanation: 'Prosperity is measured by the richness of one\'s experiences and freedom, not just bank balance.',
+      category: 'experience',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'wealth_007',
+      text: 'The more you give, the more you have.',
+      philosopher: 'Lao Tzu',
+      period: '6th century BCE',
+      explanation: 'Generosity creates a flow of abundance and spiritual wealth that hoarding cannot achieve.',
+      category: 'generosity',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'wealth_008',
+      text: 'Beware of little expenses. A small leak will sink a great ship.',
+      philosopher: 'Benjamin Franklin',
+      period: '1706-1790',
+      explanation: 'Financial stability requires attention to detail and discipline in small matters.',
+      category: 'discipline',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'wealth_009',
+      text: 'Fortune sides with him who dares.',
+      philosopher: 'Virgil',
+      period: '70-19 BCE',
+      explanation: 'Creating wealth often requires calculated risk-taking and courage.',
+      category: 'courage',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'wealth_010',
+      text: 'If you live for having it all, what you have is never enough.',
+      philosopher: 'Vicki Robin',
+      period: '1945-',
+      explanation: 'The pursuit of "more" is an endless treadmill; satisfaction comes from "enough".',
+      category: 'satisfaction',
+      difficulty: 'intermediate'
+    }
+  ],
+
+  creativity: [
+    {
+      id: 'creativity_001',
+      text: 'Creativity is intelligence having fun.',
+      philosopher: 'Albert Einstein',
+      period: '1879-1955',
+      explanation: 'Innovation comes from playfulness and the joy of exploration, not just rigid logic.',
+      category: 'play',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'creativity_002',
+      text: 'Every child is an artist. The problem is how to remain an artist once we grow up.',
+      philosopher: 'Pablo Picasso',
+      period: '1881-1973',
+      explanation: 'We are born with innate creativity, but societal conditioning often suppresses it.',
+      category: 'innocence',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'creativity_003',
+      text: 'Art is not what you see, but what you make others see.',
+      philosopher: 'Edgar Degas',
+      period: '1834-1917',
+      explanation: 'The purpose of art is communication and shifting perspective, not just replication.',
+      category: 'perspective',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'creativity_004',
+      text: 'Creativity takes courage.',
+      philosopher: 'Henri Matisse',
+      period: '1869-1954',
+      explanation: 'Expressing something new requires bravery to face criticism and failure.',
+      category: 'courage',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'creativity_005',
+      text: 'You can\'t use up creativity. The more you use, the more you have.',
+      philosopher: 'Maya Angelou',
+      period: '1928-2014',
+      explanation: 'Creativity is a renewable resource that grows with practice and expression.',
+      category: 'abundance',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'creativity_006',
+      text: 'To practice any art, no matter how well or badly, is a way to make your soul grow.',
+      philosopher: 'Kurt Vonnegut',
+      period: '1922-2007',
+      explanation: 'The act of creation is valuable for personal and spiritual growth, regardless of the outcome.',
+      category: 'growth',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'creativity_007',
+      text: 'Great things are done by a series of small things brought together.',
+      philosopher: 'Vincent van Gogh',
+      period: '1853-1890',
+      explanation: 'Masterpieces are the result of persistent attention to detail and incremental effort.',
+      category: 'persistence',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'creativity_008',
+      text: 'The object of art is not to reproduce reality, but to create a reality of the same intensity.',
+      philosopher: 'Alberto Giacometti',
+      period: '1901-1966',
+      explanation: 'Art aims to evoke deep feeling and presence, not just to copy appearance.',
+      category: 'intensity',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'creativity_009',
+      text: 'Simplicity is the glory of expression.',
+      philosopher: 'Walt Whitman',
+      period: '1819-1892',
+      explanation: 'The most powerful creative work often comes from stripping away the unnecessary.',
+      category: 'simplicity',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'creativity_010',
+      text: 'Inspiration exists, but it must find you working.',
+      philosopher: 'Pablo Picasso',
+      period: '1881-1973',
+      explanation: 'Don\'t wait for the muse; consistent work invites inspiration to arrive.',
+      category: 'discipline',
+      difficulty: 'beginner'
+    }
+  ],
+
+  science: [
+    {
+      id: 'science_001',
+      text: 'Somewhere, something incredible is waiting to be known.',
+      philosopher: 'Carl Sagan',
+      period: '1934-1996',
+      explanation: 'The universe is full of wonders yet to be discovered, inviting our curiosity.',
+      category: 'curiosity',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'science_002',
+      text: 'The first principle is that you must not fool yourself and you are the easiest person to fool.',
+      philosopher: 'Richard Feynman',
+      period: '1918-1988',
+      explanation: 'Intellectual honesty and self-skepticism are the foundations of scientific inquiry.',
+      category: 'truth',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'science_003',
+      text: 'Equipped with his five senses, man explores the universe around him and calls the adventure Science.',
+      philosopher: 'Edwin Hubble',
+      period: '1889-1953',
+      explanation: 'Science is the systematic extension of our natural perception to understand reality.',
+      category: 'exploration',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'science_004',
+      text: 'Nothing in life is to be feared, it is only to be understood.',
+      philosopher: 'Marie Curie',
+      period: '1867-1934',
+      explanation: 'Knowledge conquers fear; understanding the unknown makes it manageable.',
+      category: 'understanding',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'science_005',
+      text: 'Science is organized knowledge. Wisdom is organized life.',
+      philosopher: 'Immanuel Kant',
+      period: '1724-1804',
+      explanation: 'Facts alone are not enough; we need wisdom to apply knowledge meaningfully to our lives.',
+      category: 'wisdom',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'science_006',
+      text: 'The good thing about science is that it\'s true whether or not you believe in it.',
+      philosopher: 'Neil deGrasse Tyson',
+      period: '1958-',
+      explanation: 'Objective reality exists independently of our personal opinions or beliefs.',
+      category: 'reality',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'science_007',
+      text: 'Measure what is measurable, and make measurable what is not so.',
+      philosopher: 'Galileo Galilei',
+      period: '1564-1642',
+      explanation: 'Quantification and observation are key to understanding the physical world.',
+      category: 'observation',
+      difficulty: 'advanced'
+    },
+    {
+      id: 'science_008',
+      text: 'It is not the strongest of the species that survives, nor the most intelligent that survives. It is the one that is most adaptable to change.',
+      philosopher: 'Charles Darwin',
+      period: '1809-1882',
+      explanation: 'Flexibility and adaptation are more critical for survival than raw strength or intellect.',
+      category: 'adaptation',
+      difficulty: 'intermediate'
+    },
+    {
+      id: 'science_009',
+      text: 'If I have seen further it is by standing on the shoulders of Giants.',
+      philosopher: 'Isaac Newton',
+      period: '1642-1727',
+      explanation: 'Progress is cumulative; we build upon the discoveries and knowledge of those who came before us.',
+      category: 'humility',
+      difficulty: 'beginner'
+    },
+    {
+      id: 'science_010',
+      text: 'The most incomprehensible thing about the world is that it is comprehensible.',
+      philosopher: 'Albert Einstein',
+      period: '1879-1955',
+      explanation: 'It is a profound mystery that the human mind can understand the laws of the universe.',
+      category: 'wonder',
+      difficulty: 'advanced'
+    }
   ]
 };
 
@@ -792,7 +1257,12 @@ let userProgress = {
     roman: { mastered: 0, learning: 0, total: 0 },
     eastern: { mastered: 0, learning: 0, total: 0 },
     modern: { mastered: 0, learning: 0, total: 0 },
-    renaissance: { mastered: 0, learning: 0, total: 0 }
+    renaissance: { mastered: 0, learning: 0, total: 0 },
+    love: { mastered: 0, learning: 0, total: 0 },
+    living: { mastered: 0, learning: 0, total: 0 },
+    wealth: { mastered: 0, learning: 0, total: 0 },
+    creativity: { mastered: 0, learning: 0, total: 0 },
+    science: { mastered: 0, learning: 0, total: 0 }
   },
   achievements: [],
   journalEntries: []
